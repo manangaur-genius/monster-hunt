@@ -1,38 +1,4 @@
+<!-- Mobile Joystick Code -->
 <script>
-    // Mobile Joystick Code
-    let joystick = document.createElement('div');
-    joystick.style.position = 'fixed';
-    joystick.style.bottom = '20px';
-    joystick.style.right = '20px';
-    joystick.style.width = '100px';
-    joystick.style.height = '100px';
-    joystick.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    joystick.style.borderRadius = '50%';
-    joystick.style.pointerEvents = 'none';
-    document.body.appendChild(joystick);
-
-    let touchSurface = document.createElement('div');
-    touchSurface.style.position = 'absolute';
-    touchSurface.style.width = '100%';
-    touchSurface.style.height = '100%';
-    touchSurface.style.pointerEvents = 'auto';
-    joystick.appendChild(touchSurface);
-
-    touchSurface.addEventListener('touchstart', function(e) {
-        e.preventDefault();
-        joystick.style.pointerEvents = 'auto';
-        let touch = e.touches[0];
-        joystick.style.transform = `translate(${touch.clientX - 50}px, ${touch.clientY - 50}px)`;
-    });
-
-    touchSurface.addEventListener('touchmove', function(e) {
-        e.preventDefault();
-        let touch = e.touches[0];
-        joystick.style.transform = `translate(${touch.clientX - 50}px, ${touch.clientY - 50}px)`;
-    });
-
-    touchSurface.addEventListener('touchend', function() {
-        joystick.style.pointerEvents = 'none';
-        joystick.style.transform = 'translate(0, 0)';
-    });
+  // Your joystick implementation here
 </script>
